@@ -51,8 +51,19 @@ class AppDatabase extends SQLiteOpenHelper {
         Log.d(TAG, "onCreate: ended");
     }
 
+    // called when a database is upgraded (edit the schema here, if required)
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        Log.d(TAG, "onUpgrade: upgrade commencing");
 
+        // will return to this later...
+        switch (oldVersion){
+            case 1: // version 1
+                break;
+            default:
+                throw new IllegalStateException("onUpgrade() with unknown new version: " + newVersion);
+        }
+
+        Log.d(TAG, "onUpgrade: upgrade ended");
     }
 }
