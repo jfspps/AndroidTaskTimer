@@ -2,7 +2,7 @@ package com.example.tasktimer;
 
 import android.provider.BaseColumns;
 
-public class TaskContract {
+public class TasksContract {
 
     static final String TABLE_NAME = "Tasks";
 
