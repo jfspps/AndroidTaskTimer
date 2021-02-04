@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 /**
- * Processes the TaskTimer database
+ * Processes the TaskTimer database. This is only accessible from {@link AppProvider}.
  * */
 class AppDatabase extends SQLiteOpenHelper {
 
@@ -58,8 +58,9 @@ class AppDatabase extends SQLiteOpenHelper {
 
         // will return to this later...
         switch (oldVersion){
-            case 1: // version 1
+            case 1: // current version 1, do nothing
                 break;
+            // do something when version no. is not 1
             default:
                 throw new IllegalStateException("onUpgrade() with unknown new version: " + newVersion);
         }
